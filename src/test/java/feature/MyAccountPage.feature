@@ -10,15 +10,15 @@ Feature:  My account page
     Then user is successfully logged out
 
 
-#  Scenario Outline: Check that user is not  able to log in with invalid credentials
-#    Given user is on My account page
-#    When user populate "<username>" and "<password>" fields
-#    And  'LOG IN' button is clicked
-#    Then user should see an error message
-#
-#    Examples:
-#      | username | password |
-#      | Athens1  | Regular  |
+  Scenario Outline: Check that user is not  able to log in with invalid credentials
+    Given user is on My account page
+    When user populate "<username>" and "<password>" fields
+    And  'LOG IN' button is clicked
+    Then user should see an error message
+
+    Examples:
+      | username | password |
+      | Athens1  | Regular  |
 
 #      | admin                 | Gap31s3gs3ggap        |
 #      | pterodont32@gmail.com | pterodont32@gmail.com |
