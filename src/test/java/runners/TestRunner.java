@@ -1,19 +1,22 @@
 package runners;
 
-import org.junit.runner.RunWith;
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
 
+import com.vimalselvam.cucumber.listener.Reporter;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.AfterClass;
+import org.junit.runner.RunWith;
+
+import static utils.PropertyUtils.getPropertyFromConfigFile;
+import java.io.File;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/java/feature",
-        glue = {"hooks","stepDefinition"},
-//        plugin = { "pretty", "html:target/cucumber-reports" },
-        plugin = { "pretty", "json:target/cucumber-reports/Cucumber.json" },
-        monochrome = true
+        glue = {"hooks","stepDefinition"}
 
 )
+
 public class TestRunner {
 
 }

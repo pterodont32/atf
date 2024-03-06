@@ -1,6 +1,6 @@
 package stepDefinition;
 
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pageObjects.GeneralPage;
 import pageObjects.ProductPage;
