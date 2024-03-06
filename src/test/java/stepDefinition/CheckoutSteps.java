@@ -1,17 +1,14 @@
 package stepDefinition;
 
 import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.assertj.core.api.Assertions;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import pageObjects.CheckoutPage;
 import pageObjects.GeneralPage;
-import pageObjects.ProductPage;
 import utils.DriverManager;
 
 import java.util.List;
@@ -28,7 +25,7 @@ public class CheckoutSteps {
 
     @And("^user proceeds to checkout$")
     public void userProceedsToCheckout() {
-        generalPage.clickCheckoutlink();
+        generalPage.clickCheckoutLink();
     }
 
     @When("^user completes the purchase with shipping information:$")

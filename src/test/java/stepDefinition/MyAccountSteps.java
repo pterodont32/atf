@@ -37,7 +37,7 @@ public class MyAccountSteps {
 
     @Then("^user is successfully logged in$")
     public void userIsSuccessfullyLoggedIn() {
-        Assertions.assertThat(myAccountPage.getHelloMesage()).isEqualTo("From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.");
+        Assertions.assertThat(myAccountPage.getHelloMessage()).isEqualTo("From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.");
     }
 
     @Then("^user is successfully logged out$")

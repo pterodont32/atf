@@ -22,7 +22,7 @@ public class MyAccountPage {
     private WebElement loginButton;
 
     @FindBy(xpath = "//*[@id=\"post-8\"]/div/div/div/p[2]")
-    private WebElement helloMesage;
+    private WebElement helloMessage;
 
     @FindBy(xpath = "//*[@id=\"post-8\"]/div/div/nav/ul/li[6]/a")
     private WebElement logoutButton;
@@ -65,8 +65,8 @@ public class MyAccountPage {
         logoutButton.click();
     }
 
-    public String getHelloMesage() {
-        return helloMesage.getText();
+    public String getHelloMessage() {
+        return helloMessage.getText();
     }
 
     public String loginMesage() {

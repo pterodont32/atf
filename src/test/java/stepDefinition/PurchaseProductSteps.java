@@ -1,6 +1,5 @@
 package stepDefinition;
 
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pageObjects.GeneralPage;
@@ -15,7 +14,7 @@ public class PurchaseProductSteps {
 
     @When("^user adds a product \"([^\"]*)\" to the cart$")
     public void userAddsProductToCart(String productName) {
-        generalPage.bannerDissmis();
+        generalPage.bannerDismiss();
         generalPage.clickSearchElement();
         generalPage.searchProduct(productName);
         generalPage.pressEnterAfterSearch();

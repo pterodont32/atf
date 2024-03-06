@@ -35,7 +35,7 @@ import static utils.PropertyUtils.getPropertyFromConfigFile;
                 driver = new ChromeDriver();
                 driver.manage().window().maximize();
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                driver.get("https://shop.demoqa.com/my-account/");
+                driver.get(getPropertyFromConfigFile("urlMyAccountSteps"));
             }
             return driver;
         }
