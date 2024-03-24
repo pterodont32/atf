@@ -23,7 +23,7 @@ public class ProductPage {
     private WebElement sizeDropdown;
 
     @FindBy(xpath = "//*[@id=\"product-1287\"]/div[1]/div[2]/form/div/div[2]/button")
-    private WebElement AddToChartButton;
+    private WebElement addToChartButton;
 
     public void selectColor(String color) {
         Select colorSelect = new Select(colorDropdown);
@@ -36,6 +36,6 @@ public class ProductPage {
 
     }
     public void clickAddToChartButton() {
-        AddToChartButton.click();
+        addToChartButton.click();
     }
 }

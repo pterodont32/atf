@@ -41,6 +41,4 @@ public class GeneralPage {
         searchInput.sendKeys(Keys.ENTER);
     }
 
-
-
 }

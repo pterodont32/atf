@@ -31,7 +31,7 @@ Feature:  My account page
 #      | <Username> | <Email>       | <Password> |
 #    And 'Register' button is clicked
 #    Then user should see an error message indicating the email is already registered
-##
+#
 #    Examples:
 #      | Username | Email                              | Password                     |
 #      | elf321   | pterodont32@gmail.com              | Gap31s3gs3ggapGap31s3gs3ggap |

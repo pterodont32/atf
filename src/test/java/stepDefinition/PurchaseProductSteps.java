@@ -11,7 +11,6 @@ public class PurchaseProductSteps {
     GeneralPage generalPage = new GeneralPage(driver);
     ProductPage productPage= new ProductPage(driver);
 
-
     @When("^user adds a product \"([^\"]*)\" to the cart$")
     public void userAddsProductToCart(String productName) {
         generalPage.bannerDismiss();

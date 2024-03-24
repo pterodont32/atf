@@ -9,11 +9,11 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/java/feature",
         glue = {"hooks","stepDefinition"},
+        stepNotifications =  true,
         plugin = { "pretty", "html:target/cucumber-reports/Cucumber.html" },
         monochrome = true
 
 )
 
 public class TestRunner {
-
 }

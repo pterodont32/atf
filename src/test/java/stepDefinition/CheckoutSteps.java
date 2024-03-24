@@ -20,8 +20,6 @@ public class CheckoutSteps {
     WebDriver driver = DriverManager.getDriver();
     CheckoutPage checkoutPage = new CheckoutPage(driver);
     GeneralPage generalPage = new GeneralPage(driver);
-    Actions actions = new Actions(driver);
-
 
     @And("^user proceeds to checkout$")
     public void userProceedsToCheckout() {
@@ -43,7 +41,6 @@ public class CheckoutSteps {
             checkoutPage.populateShippingInformation(name, lastName, streetAddress, town, pinCode, phone, email);
         }
     }
-
 
     @And("^user clicks the 'Place Order' button$")
     public void userClicksThePlaceOrderButton() {
