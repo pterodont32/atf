@@ -22,7 +22,7 @@ public class MyAccountPage {
     private WebElement loginButton;
 
     @FindBy(xpath = "//*[@id=\"post-8\"]/div/div/div/p[2]")
-    private WebElement helloMesage;
+    private WebElement helloMessage;
 
     @FindBy(xpath = "//*[@id=\"post-8\"]/div/div/nav/ul/li[6]/a")
     private WebElement logoutButton;
@@ -31,23 +31,23 @@ public class MyAccountPage {
     private WebElement loginText;
 
     @FindBy(xpath = "//*[@id=\"post-8\"]/div/div/div[1]/div/div")
-    private WebElement ErrorMessage;
+    private WebElement errorMessage;
 
     // Register
     @FindBy(xpath = "//*[@id=\"post-8\"]/div/div/div[1]/div/div")
-    private WebElement RegisterErrorMessage;
+    private WebElement registerErrorMessage;
 
     @FindBy(xpath = "//*[@id=\"reg_username\"]")
-    private WebElement RegisterUsername;
+    private WebElement registerUsername;
 
     @FindBy(xpath = "//*[@id=\"reg_email\"]")
-    private WebElement RegisterEmail;
+    private WebElement registerEmail;
 
     @FindBy(xpath = "//*[@id=\"reg_password\"]")
-    private WebElement RegisterPassword;
+    private WebElement registerPassword;
 
     @FindBy(xpath = "//*[@id=\"customer_login\"]/div[2]/form/p[4]/button")
-    private WebElement RegisterButton;
+    private WebElement registerButton;
 
     public void enterUsername(String username) {
         usernameInput.sendKeys(username);
@@ -65,8 +65,8 @@ public class MyAccountPage {
         logoutButton.click();
     }
 
-    public String getHelloMesage() {
-        return helloMesage.getText();
+    public String getHelloMessage() {
+        return helloMessage.getText();
     }
 
     public String loginMesage() {
@@ -74,17 +74,17 @@ public class MyAccountPage {
     }
 
     public String getErrorMessage() {
-        return ErrorMessage.getText();
+        return errorMessage.getText();
     }
 
     public void fillRegistrationForm(String username, String email, String password) {
-        RegisterUsername.sendKeys(username);
-        RegisterEmail.sendKeys(email);
-        RegisterPassword.sendKeys(password);
+        registerUsername.sendKeys(username);
+        registerEmail.sendKeys(email);
+        registerPassword.sendKeys(password);
     }
 
     public void clickRegisterButton() {
-        RegisterButton.click();
+        registerButton.click();
     }
 
 }

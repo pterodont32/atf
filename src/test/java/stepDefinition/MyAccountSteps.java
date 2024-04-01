@@ -1,14 +1,18 @@
 package stepDefinition;
 
-import cucumber.api.DataTable;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.When;
+import io.cucumber.java.en.Given;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import pageObjects.MyAccountPage;
 import utils.DriverManager;
+
 import java.util.List;
 import java.util.Map;
 
@@ -16,7 +20,7 @@ import java.util.Map;
 public class MyAccountSteps {
     WebDriver driver = DriverManager.getDriver();
     MyAccountPage myAccountPage;
-
+    private static final Logger log = LogManager.getLogger(MyAccountSteps.class);
 
     @Given("^user is on My account page$")
     public void userIsOnMyAccountPage() {
@@ -25,6 +29,7 @@ public class MyAccountSteps {
 
     @When("^user populate \"([^\"]*)\" and \"([^\"]*)\" fields$")
     public void userPopulateFields(String username, String password) {
+        log.info("-----------------------------------------");
         myAccountPage.enterUsername(username);
         myAccountPage.enterPassword(password);
     }
@@ -37,7 +42,7 @@ public class MyAccountSteps {
 
     @Then("^user is successfully logged in$")
     public void userIsSuccessfullyLoggedIn() {
-        Assertions.assertThat(myAccountPage.getHelloMesage()).isEqualTo("From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.");
+        Assertions.assertThat(myAccountPage.getHelloMessage()).isEqualTo("From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.");
     }
 
     @Then("^user is successfully logged out$")
@@ -54,33 +59,29 @@ public class MyAccountSteps {
     @Then("^user should see an error message$")
     public void userShouldSeeAnErrorMessage() {
         Assertions.assertThat(myAccountPage.getErrorMessage()).isEqualTo("ERROR: The username or password you entered is incorrect. Lost your password?");
-//        driver.quit();
     }
 
     @When("^user fill in the registration form with the following details:$")
     public void userFillInTheRegistrationFormWithTheFollowingDetails(DataTable dataTable) {
         List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
 
-        for (Map<String, String> row : data) {
+        data.forEach(row -> {
             String username = row.get("USERNAME");
             String email = row.get("EMAIL ADDRESS");
             String password = row.get("PASSWORD");
 
             myAccountPage.fillRegistrationForm(username, email, password);
-        }
+        });
     }
-
 
     @And("^'Register' button is clicked$")
     public void registerButtonIsClicked() {
         myAccountPage.clickRegisterButton();
     }
 
-
     @Then("^user should see an error message indicating the email is already registered$")
     public void userShouldSeeAnErrorMessageIndicatingTheEmailIsAlreadyRegistered() {
         Assertions.assertThat(myAccountPage.getErrorMessage()).isEqualTo("Error: An account is already registered with your email address. Please log in.");
-
 
     }
 }

@@ -1,17 +1,14 @@
 package stepDefinition;
 
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.When;
 import org.assertj.core.api.Assertions;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import pageObjects.CheckoutPage;
 import pageObjects.GeneralPage;
-import pageObjects.ProductPage;
 import utils.DriverManager;
 
 import java.util.List;
@@ -23,12 +20,10 @@ public class CheckoutSteps {
     WebDriver driver = DriverManager.getDriver();
     CheckoutPage checkoutPage = new CheckoutPage(driver);
     GeneralPage generalPage = new GeneralPage(driver);
-    Actions actions = new Actions(driver);
-
 
     @And("^user proceeds to checkout$")
     public void userProceedsToCheckout() {
-        generalPage.clickCheckoutlink();
+        generalPage.clickCheckoutLink();
     }
 
     @When("^user completes the purchase with shipping information:$")
@@ -46,7 +41,6 @@ public class CheckoutSteps {
             checkoutPage.populateShippingInformation(name, lastName, streetAddress, town, pinCode, phone, email);
         }
     }
-
 
     @And("^user clicks the 'Place Order' button$")
     public void userClicksThePlaceOrderButton() {

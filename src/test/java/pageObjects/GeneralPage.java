@@ -20,19 +20,19 @@ public class GeneralPage {
     private WebElement searchInput;
 
     @FindBy(xpath = "//*[@id=\"noo-site\"]/header/div[1]/div/ul[2]/li[3]/a")
-    private WebElement checkoutlink;
+    private WebElement checkoutLink;
 
     @FindBy(xpath = "/html/body/p[1]/a")
-    private WebElement bannerDissmis;
+    private WebElement bannerDismiss;
 
     public void clickSearchElement() {
         search.click();
     }
-    public void clickCheckoutlink() {
-        checkoutlink.click();
+    public void clickCheckoutLink() {
+        checkoutLink.click();
     }
-    public void bannerDissmis() {
-        bannerDissmis.click();
+    public void bannerDismiss() {
+        bannerDismiss.click();
     }
     public void searchProduct(String productName) {
         searchInput.sendKeys(productName);
@@ -40,7 +40,5 @@ public class GeneralPage {
     public void pressEnterAfterSearch() {
         searchInput.sendKeys(Keys.ENTER);
     }
-
-
 
 }
