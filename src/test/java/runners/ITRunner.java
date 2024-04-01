@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/java/feature",
         glue = {"hooks", "stepDefinition"},
         stepNotifications = true,
-        plugin = {"pretty", "html:target/cucumber-reports/Cucumber.html"},
+        plugin = {"pretty", "html:target/cucumber-reports"},
         monochrome = true
 
 )

@@ -12,6 +12,7 @@ import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import pageObjects.MyAccountPage;
 import utils.DriverManager;
+
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +20,7 @@ import java.util.Map;
 public class MyAccountSteps {
     WebDriver driver = DriverManager.getDriver();
     MyAccountPage myAccountPage;
-    private static final Logger logger =  LogManager.getLogger(MyAccountSteps.class);
+    private static final Logger log = LogManager.getLogger(MyAccountSteps.class);
 
     @Given("^user is on My account page$")
     public void userIsOnMyAccountPage() {
@@ -28,7 +29,7 @@ public class MyAccountSteps {
 
     @When("^user populate \"([^\"]*)\" and \"([^\"]*)\" fields$")
     public void userPopulateFields(String username, String password) {
-        logger.info("-----------------------------------------");
+        log.info("-----------------------------------------");
         myAccountPage.enterUsername(username);
         myAccountPage.enterPassword(password);
     }
